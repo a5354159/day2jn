@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wraper">
+        <div class="btns">
+            <div>按钮一</div>
+            <div>按钮二</div>
+            <div>按钮三</div>
+            <div>按钮四</div>
+        </div>
+        <ul class="list">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $('.btns').on('click', 'div',
+        function() {
+            $(this).addClass('.bg').siblings().removeClass('.bg').parents('.btns').next('.list').children().eq($(this).index()).show().siblings().hide()
+        })
+</script>
+
+</html>
